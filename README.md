@@ -12,6 +12,9 @@ arXiv: https://arxiv.org/abs/2405.13901
   <img src="figures/method.png" alt="" width="50%" />
 </p>
 
+# Computational Complexity Analysis
+The DCT-Compressed MSA significantly optimizes the Multi-Head Self-Attention (MSA) mechanism. The total computational cost is reduced from the vanilla complexity $4NM^2C^3 + 2NM^4C^2$ to $(2\tau + 3\tau^2)NM^2C^3 + 2\tau^2NM^4C^2$ for $\tau < 1$.
+    
 <p align="center">
   <img src="figures/MAC.png" alt="" width="50%" />
 </p>
