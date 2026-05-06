@@ -83,13 +83,11 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   
     <div class="content-section">
-        <p align="center"><img src="figures/pipeline.png" alt="Pipeline"></p>
-        
         <h2>Abstract</h2>
         <p>Self-attention is central to the success of Transformer architectures; however, learning the query, key, and value projections from random initialization remains challenging and computationally expensive. In this paper, we propose two complementary methods that leverage the Discrete Cosine Transform (DCT) to enhance the efficiency and performance of Vision Transformers. First, we address the initialization problem by introducing a simple yet effective DCT-based initialization strategy for self-attention, where projection weights are initialized using DCT coefficients. This structure-preserving approach consistently improves classification accuracy on the CIFAR-10 and ImageNet-1K benchmarks. Second, we propose a DCT-based attention compression technique that exploits the decorrelation properties of the frequency domain. By observing that high-frequency DCT coefficients typically correspond to noise, we truncate high-frequency components of the input patches, thereby reducing the dimensionality of the query, key, and value projections without sacrificing accuracy. Experiments on Swin Transformer models demonstrate that the proposed compression method achieves a substantial reduction in computational overhead while maintaining comparable performance.
 
         <h2>Two Proposed DCT-based Decorrelated Attentions for Vision Transformers</h2>
-        <p align="center"><img src="figures/improvement.png" alt="improvement"></p>
+        <p align="center"><img src="figures/method.png" alt="method"></p>
           
         <h2>Computational Complexity Analysis</h2>
           
