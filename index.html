@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discrete Cosine Transform-Based Decorrelated Attention for Vision Transformers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; max-width: 1100px; margin: 0 auto; padding: 40px 20px; color: #24292e; background-color: #ffffff; }
+        .center { text-align: center; }
+        h1 { font-size: 2.4rem; font-weight: 800; color: #1c2b3a; margin-bottom: 30px; line-height: 1.2; }
+        
+        /* Author & Affiliation Styles */
+        .authors { font-size: 1.2rem; color: #24292e; margin-bottom: 15px; font-weight: 400; }
+        .affiliations { font-size: 1.05rem; color: #24292e; line-height: 1.4; margin-bottom: 10px; }
+        .emails { font-family: monospace; font-size: 1rem; color: #444d56; margin-bottom: 30px; }
+        
+        /* Pill Button Container */
+        .link-buttons { margin: 20px 0; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+        
+        /* Pill Button Styling */
+        .btn { 
+            background-color: #1c2b3a; color: white; padding: 10px 20px; border-radius: 12px; 
+            text-decoration: none; font-weight: 600; font-size: 1rem;
+            display: flex; align-items: center; gap: 8px; transition: all 0.2s ease;
+        }
+        .btn:hover { background-color: #3e4c59; transform: translateY(-2px); }
+        .btn-highlight { border: 2px solid #007bff; }
+
+
+        /* High-Impact Summary Box (PRS-Med Style) */
+        .summary-box {
+            background-color: #f1f4ff;
+            border-left: 6px solid #4493d1;
+            padding: 25px 35px;
+            border-radius: 10px;
+            margin: 50px 0;
+            text-align: left;
+        }
+        .summary-box p {
+            margin: 0;
+            font-size: 1.25rem;
+            color: #4051b5;
+            line-height: 1.6;
+        }
+        .summary-box strong { color: #283593; font-weight: 700; }
+        
+        /* Content Sections */
+        .content-section { margin-top: 50px; border-top: 1px dotted #ccc; padding-top: 30px; }
+        h2 { font-size: 1.6rem; margin-top: 40px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        img { width: 100%; border-radius: 5px; margin: 20px 0; }
+        pre { background: #f6f8fa; padding: 20px; border-radius: 8px; overflow-x: auto; font-size: 0.9rem; border: 1px solid #dfe2e5; }
+    </style>
+</head>
+<body>
+
+    <div class="center">
+        <h1>Discrete Cosine Transform-Based Decorrelated Attention for Vision Transformers</h1>
+      
+        <div class="authors">
+            Hongyi Pan<sup>1&dagger;</sup>, Emadeldeen Hamdan<sup>2</sup>, Xin Zhu<sup>2</sup>, Ahmet Enis Cetin<sup>2</sup>, Ulas Bagci<sup>1</sup>, <br>
+        </div>
+        
+        <div class="affiliations">
+            <sup>1</sup>Machine and Hybrid Intelligence Lab, Northwestern University, Chicago, IL, USA <br>
+            <sup>2</sup>Department of Electrical and Computer Engineering, University of Illinois Chicago, Chicago, IL, USA <br>
+        </div>
+
+        <div class="link-buttons">
+            <a href="https://arxiv.org/abs/2405.13901" class="btn"><i class="fas fa-file-pdf"></i> Paper (Comming Soon)</a>
+            <a href="https://arxiv.org/abs/2405.13901" class="btn"><i class="fas fa-external-link-alt"></i> arXiv</a>
+            <a href="https://github.com/NUBagciLab/DCT-Transformer" class="btn btn-highlight"><i class="fab fa-github"></i> Code</a>           
+        </div>
+    </div>
+
+    <div class="summary-box">
+        <p>
+            We introduce two complementary methods leveraging the <strong>Discrete Cosine Transform (DCT)</strong> to enhance the efficiency and performance of Vision Transformers (ViTs): 1. We propose a novel <strong>DCT-based initialization strategy</strong> that ensures full-band spectral coverage, consistently improving accuracy on CIFAR-10 and ImageNet-1K. 2.Our <strong>DCT-based attention compression</strong> technique exploits frequency-domain decorrelation to reduce computational overhead—achieving a <strong>14.0% reduction in parameters</strong> and <strong>8.2% reduction in FLOPs</strong> for ViT-B-32 while maintaining or improving performance.
+        </p>
+    </div>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+    <div class="content-section">
+        <p align="center"><img src="figures/pipeline.png" alt="Pipeline"></p>
+        
+        <h2>Abstract</h2>
+        <p>Self-attention is central to the success of Transformer architectures; however, learning the query, key, and value projections from random initialization remains challenging and computationally expensive. In this paper, we propose two complementary methods that leverage the Discrete Cosine Transform (DCT) to enhance the efficiency and performance of Vision Transformers. First, we address the initialization problem by introducing a simple yet effective DCT-based initialization strategy for self-attention, where projection weights are initialized using DCT coefficients. This structure-preserving approach consistently improves classification accuracy on the CIFAR-10 and ImageNet-1K benchmarks. Second, we propose a DCT-based attention compression technique that exploits the decorrelation properties of the frequency domain. By observing that high-frequency DCT coefficients typically correspond to noise, we truncate high-frequency components of the input patches, thereby reducing the dimensionality of the query, key, and value projections without sacrificing accuracy. Experiments on Swin Transformer models demonstrate that the proposed compression method achieves a substantial reduction in computational overhead while maintaining comparable performance.
+
+        <h2>Two Proposed DCT-based Decorrelated Attentions for Vision Transformers</h2>
+        <p align="center"><img src="figures/improvement.png" alt="improvement"></p>
+          
+        <h2>Computational Complexity Analysis</h2>
+          
+          <p>
+              A core contribution of our work is the significant reduction in computational overhead. 
+              The <strong>DCT-Compressed MSA</strong> optimizes the Multi-Head Self-Attention mechanism, 
+              reducing the total multiplications from the vanilla complexity of:
+          </p>
+      
+          <div class="center" style="font-size: 1.4rem; margin: 20px 0;">
+              $$4NM^2C^3 + 2NM^4C^2$$
+          </div>
+      
+          <p>to the optimized DCT-Compressed complexity[cite: 135]:</p>
+      
+          <div class="center" style="font-size: 1.4rem; margin: 20px 0; color: #1a73e8;">
+              $$(2\tau + 3\tau^2)NM^2C^3 + 2\tau^2NM^4C^2$$
+          </div>
+      
+          <p>
+              where \(N\) is the number of patches, \(M \times M\) is the patch resolution, \(C\) is the channel dimension, 
+              and \(\tau < 1\) is the DCT coefficient retention ratio[cite: 135]. 
+              As shown in the figure below, this simplification results in a substantial reduction in Multiply-Accumulate (MAC) operations.
+          </p>
+      
+          <p align="center">
+              <img src="figures/MAC.png" alt="MAC Comparison" style="width: 80%; max-width: 700px;">
+          </p>
+
+        <h2>Benchmark</h2>
+        <p align="center"><img src="figures/CIFAR-10.png" style="width: 50%;" alt="CIFAR-10"></p>
+        <p align="center"><img src="figures/ImageNet-1K.png" style="width: 50%;" alt="ImageNet-1K"></p>
+      
+        <h2>BibTeX Citation</h2>
+        <pre>@inproceedings{pan2026dct,
+  title={Discrete Cosine Transform-Based Decorrelated Attention for Vision Transformers},
+  author={Pan, Hongyi and Hamdan, Emadeldeen and Zhu, Xin and Cetin, Ahmet Enis and Bagci, Ulas},
+  booktitle={Proceedings of the 35th International Joint Conference on Artificial Intelligence (IJCAI)},
+  year={2026}
+}</pre>
+    </div>
+
+</body>
+</html>
