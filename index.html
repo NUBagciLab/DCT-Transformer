@@ -96,19 +96,9 @@
           <p>
               A core contribution of our work is the significant reduction in computational overhead. 
               The <strong>DCT-Compressed MSA</strong> optimizes the Multi-Head Self-Attention mechanism, 
-              reducing the total multiplications from the vanilla complexity of:
+              reducing the total multiplications from the vanilla complexity of $$4NM^2C^3 + 2NM^4C^2$$ to $$(2\tau + 3\tau^2)NM^2C^3 + 2\tau^2NM^4C^2$$
           </p>
-      
-          <div class="center" style="font-size: 1.4rem; margin: 20px 0;">
-              $$4NM^2C^3 + 2NM^4C^2$$
-          </div>
-      
-          <p>to the optimized DCT-Compressed complexity:</p>
-      
-          <div class="center" style="font-size: 1.4rem; margin: 20px 0; color: #1a73e8;">
-              $$(2\tau + 3\tau^2)NM^2C^3 + 2\tau^2NM^4C^2$$
-          </div>
-      
+        
           <p>
               where \(N\) is the number of patches, \(M \times M\) is the patch resolution, \(C\) is the channel dimension, 
               and \(\tau < 1\) is the DCT coefficient retention ratio. 
@@ -119,9 +109,17 @@
               <img src="figures/MAC.png" alt="MAC Comparison" style="width: 80%; max-width: 700px;">
           </p>
 
-        <h2>Benchmark</h2>
-        <p align="center"><img src="figures/CIFAR-10.png" style="width: 50%;" alt="CIFAR-10"></p>
-        <p align="center"><img src="figures/ImageNet-1K.png" style="width: 50%;" alt="ImageNet-1K"></p>
+        <h2>Benchmark Results</h2>
+        <div class="side-by-side-grid">
+            <div class="grid-item">
+                <img src="figures/CIFAR-10.png" alt="CIFAR-10 Benchmark">
+                <p class="caption">CIFAR-10 Accuracy</p>
+            </div>
+            <div class="grid-item">
+                <img src="figures/ImageNet-1K.png" alt="ImageNet-1K Benchmark">
+                <p class="caption">ImageNet-1K Accuracy</p>
+            </div>
+        </div>
       
         <h2>BibTeX Citation</h2>
         <pre>@inproceedings{pan2026dct,
