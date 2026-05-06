@@ -26,6 +26,6 @@ arXiv: https://arxiv.org/abs/2405.13901
   </table>
 </p>
 # Citation
-If you use this dataset in your research, please cite our CVPR 2026 paper:
+If you use this dataset in your research, please cite our paper:
 
     Hongyi Pan, Emadeldeen Hamdan, Xin Zhu, Ahmet Enis Cetin, Ulas Bagci. "Discrete Cosine Transform Based Decorrelated Attention for Vision Transformers." IJCAI 2026.
