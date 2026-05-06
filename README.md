@@ -1,1 +1,1 @@
-# [IJCAI2026] Discrete Cosine Transform-Based Decorrelated Attention for Vision Transformers
+# [IJCAI--ECAI 2026] Discrete Cosine Transform-Based Decorrelated Attention for Vision Transformers
