@@ -1,6 +1,4 @@
-These experiments are based on PyTorch's official ImageNet training:
-
-    https://github.com/pytorch/vision/tree/main/references/classification#swintransformer
+These experiments are based on [PyTorch's official ImageNet training](https://github.com/pytorch/vision/tree/main/references/classification#swintransformer).
 
 Folders `swin-t` and `vit_b_32` are the vanilla transformers for reference. All other folders were revised based on them.
 
