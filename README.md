@@ -31,7 +31,7 @@ The DCT-Compressed MSA significantly optimizes the Multi-Head Self-Attention (MS
 # Citation
 If you use this dataset in your research, please cite our paper:
 
-    @inproceedings{ijcai2026p522,
+    @inproceedings{pan2026dct,
       title     = {Discrete Cosine Transform Based Decorrelated Attention for Vision Transformers},
       author    = {Pan, Hongyi and Hamdan, Emadeldeen and Zhu, Xin and Cetin, Ahmet Enis and Bagci, Ulas},
       booktitle = {Proceedings of the Thirty-Fifth International Joint Conference on
